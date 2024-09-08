@@ -1,0 +1,51 @@
+To create an ordered list containing only book IDs and implement a C program to search for a particular book ID, we can use an array to store the book IDs and perform a binary search to efficiently find the availability of a book. Here's a C program that demonstrates this:
+
+```c
+#include <stdio.h>
+
+#define MAX_BOOKS 10  // Maximum number of books in the library
+
+// Function to perform binary search on the ordered book ID list
+int binarySearch(int bookList[], int size, int target) {
+    int left = 0;
+    int right = size - 1;
+
+    while (left <= right) {
+        int mid = left + (right - left) / 2;
+
+        if (bookList[mid] == target) {
+            return mid;  // Book found at index 'mid'
+        } else if (bookList[mid] < target) {
+            left = mid + 1;
+        } else {
+            right = mid - 1;
+        }
+    }
+
+    return -1;  // Book not found
+}
+
+int main() {
+    int bookIdList[MAX_BOOKS] = {101, 205, 312, 415, 522, 633, 715, 821, 937, 1005}; // Assume an ordered list of book IDs
+    int bookIdToSearch = 415;  // Book ID to search
+
+    // Perform binary search to check the availability of the book ID
+    int index = binarySearch(bookIdList, MAX_BOOKS, bookIdToSearch);
+
+    // Check the result of the search
+    if (index != -1) {
+        printf("Book with ID %d is available at index %d in the list.\n", bookIdToSearch, index);
+    } else {
+        printf("Book with ID %d is not available in the list.\n", bookIdToSearch);
+    }
+
+    return 0;
+}
+```
+
+In this program:
+- We define an array `bookIdList` to store the ordered book IDs. Here, we assume that the book IDs are sorted in ascending order.
+- The `binarySearch` function is used to perform the binary search algorithm on the ordered book ID list. This function returns the index of the book if found or -1 if the book is not available in the list.
+- In the `main` function, we provide a book ID to search for and call the `binarySearch` function to check the availability of that book ID in the list. We then display the search result.
+
+This program demonstrates how an ordered list of book IDs and binary search can be used to efficiently check the availability of a specific book in the library.
