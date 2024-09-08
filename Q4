@@ -1,0 +1,45 @@
+To manage the list of students who have submitted their assignments, the teacher can use an array data structure to store the student names in the order of submission. As new students submit their work, the teacher can insert their names into the array. Here's a C program that demonstrates how to insert new student names into an array to manage the list:
+
+```c
+#include <stdio.h>
+#include <string.h>
+
+#define MAX_STUDENTS 20  // Maximum number of students who can submit their assignments
+
+int main() {
+    char studentList[MAX_STUDENTS][50];  // Assuming a maximum of 20 students with a maximum name length of 50 characters
+    int numStudents = 0;  // Variable to keep track of the number of students who have submitted their assignments
+
+    // Function to insert a new student name into the array
+    void insertStudent(char name[]) {
+        if (numStudents < MAX_STUDENTS) {
+            strcpy(studentList[numStudents], name);  // Copy the student name into the array at the next available position
+            numStudents++;  // Increment the number of students
+            printf("Student %s has been added to the list.\n", name);
+        } else {
+            printf("The list is full. Cannot add more students.\n");
+        }
+    }
+
+    // Insert some sample student names
+    insertStudent("Alice");
+    insertStudent("Bob");
+    insertStudent("Charlie");
+
+    // Display the current list of students who have submitted their assignments
+    printf("\nList of students who have submitted their assignments:\n");
+    for (int i = 0; i < numStudents; i++) {
+        printf("%d. %s\n", i + 1, studentList[i]);
+    }
+
+    return 0;
+}
+```
+
+In this program:
+- We define an array `studentList` to store the student names. Each student name is represented as a string within the array.
+- We set a maximum number of students that can submit their assignments using the `MAX_STUDENTS` constant.
+- The `insertStudent` function is used to insert a new student name into the array. It first checks if there is space in the array to add a new student. If space is available, it copies the student name into the array at the next available position and increments the count of students.
+- We then demonstrate inserting sample student names into the array and display the current list of students who have submitted their assignments.
+
+This program illustrates how to use an array data structure to manage the list of students who have submitted their assignments and how to insert new student names into the array as they submit their work.
