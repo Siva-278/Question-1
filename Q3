@@ -1,0 +1,46 @@
+In this scenario, the most suitable data structures for representing the Square and Rectangle objects are structures in C. We can define a structure for the Square object with an attribute for its area and another structure for the Rectangle object with attributes for its length and breadth.
+
+Here is a C program that defines the structures for Square and Rectangle objects and demonstrates their usage:
+
+```c
+#include <stdio.h>
+
+// Define a structure for Square
+struct Square {
+    int area;
+};
+
+// Define a structure for Rectangle
+struct Rectangle {
+    int length;
+    int breadth;
+};
+
+int main() {
+    // Create a Square object
+    struct Square square;
+    square.area = 16; // Assume the area of the square is 16
+
+    // Create a Rectangle object
+    struct Rectangle rectangle;
+    rectangle.length = 8; // Assume the length of the rectangle is 8
+    rectangle.breadth = 4; // Assume the breadth of the rectangle is 4
+
+    // Display the attributes of the Square object
+    printf("Square Area: %d\n", square.area);
+
+    // Display the attributes of the Rectangle object
+    printf("Rectangle Length: %d\n", rectangle.length);
+    printf("Rectangle Breadth: %d\n", rectangle.breadth);
+
+    return 0;
+}
+```
+
+In this program:
+- We define a structure `Square` with an attribute for the area of the square.
+- We define a structure `Rectangle` with attributes for the length and breadth of the rectangle.
+- In the `main` function, we create instances of the `Square` and `Rectangle` structures and assign values to their attributes.
+- Finally, we demonstrate the usage by printing out the attributes of the Square and Rectangle objects.
+
+This program provides a basic demonstration of defining structures for Square and Rectangle objects and accessing their attributes in a C program.
