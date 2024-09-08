@@ -1,0 +1,38 @@
+Sure! Here's a C program to perform matrix addition for the given matrices A and B:
+
+```c
+#include <stdio.h>
+
+int main() {
+    // Define the matrices A and B
+    int A[2][2] = {{3, 4}, {2, 4}};
+    int B[2][2] = {{1, 2}, {3, 4}};
+    int result[2][2];  // Matrix to store the result of addition
+
+    // Perform matrix addition
+    for (int i = 0; i < 2; i++) {
+        for (int j = 0; j < 2; j++) {
+            result[i][j] = A[i][j] + B[i][j];
+        }
+    }
+
+    // Display the result of matrix addition
+    printf("Result of matrix addition:\n");
+    for (int i = 0; i < 2; i++) {
+        for (int j = 0; j < 2; j++) {
+            printf("%d ", result[i][j]);
+        }
+        printf("\n");
+    }
+
+    return 0;
+}
+```
+
+In this program:
+- We define the matrices A and B as 2x2 arrays.
+- We perform matrix addition by iterating through each element of the matrices and adding the corresponding elements to compute the result.
+- The result of the addition is stored in the `result` matrix.
+- Finally, we display the result of the matrix addition.
+
+When you run this program, it will perform the addition of the matrices A and B and display the result as a new matrix.
